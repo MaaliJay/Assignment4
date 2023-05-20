@@ -127,7 +127,7 @@ public class Payment extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Expaniration Date");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16 " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16 ","17", "18 ","19", "20","21", "22", "23", "24", "25", "26", "27", "28","29", "30" }));
         jComboBox1.setToolTipText("Date");
 
         jTextField31.setForeground(new java.awt.Color(153, 153, 153));
@@ -187,10 +187,10 @@ public class Payment extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(153, 153, 153));
         jLabel17.setText("Month");
 
-        jLabel18.setIcon(new javax.swing.ImageIcon("D:\\Downloads\\output-onlinepngtools (1).png")); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon("../src/Icons/visaCard.png")); // NOI18N
         jLabel18.setText("jLabel17");
 
-        jLabel19.setIcon(new javax.swing.ImageIcon("D:\\Downloads\\output-onlinepngtools (3).png")); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon("../src/Icons/masterCard.png")); // NOI18N
         jLabel19.setText("jLabel19");
 
         jLabel77.setForeground(new java.awt.Color(102, 102, 102));

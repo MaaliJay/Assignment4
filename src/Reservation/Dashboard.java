@@ -4,9 +4,11 @@
  */
 package Reservation;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 /**
@@ -20,16 +22,15 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
-        //scaleImg();
     }
 
-public void scaleImg(){
-    ImageIcon icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Wunderlust logo.png")));
-    Image img = icon.getImage();
-    Image imgScale = img.getScaledInstance(HomeImg.getWidth(), HomeImg.getHeight(), Image.SCALE_SMOOTH);
-    ImageIcon scaleIcon = new ImageIcon(imgScale);
-    HomeImg.setIcon(scaleIcon);
-}     
+    public void resetcolor(JPanel panel){
+        panel.setBackground(new Color(73, 89, 235));
+    }
+    
+    public void setcolor(JPanel panel){
+        panel.setBackground(new Color(85, 242, 240));
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,14 +48,14 @@ public void scaleImg(){
         HomeBtn = new javax.swing.JPanel();
         Home_icon = new javax.swing.JLabel();
         Home_lable = new javax.swing.JLabel();
-        GuideBtn1 = new javax.swing.JPanel();
-        Guide_icon1 = new javax.swing.JLabel();
-        Guide_lable1 = new javax.swing.JLabel();
-        AppLogo = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        GuideBtn = new javax.swing.JPanel();
+        Guide_icon = new javax.swing.JLabel();
+        Guide_lable = new javax.swing.JLabel();
         FeedbackBtn = new javax.swing.JPanel();
         Feedback_icon = new javax.swing.JLabel();
         Feedback_lable = new javax.swing.JLabel();
+        AppLogo = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         TabbedPane = new javax.swing.JTabbedPane();
         Home = new javax.swing.JPanel();
         HomeImg = new javax.swing.JLabel();
@@ -83,8 +84,13 @@ public void scaleImg(){
             }
         });
 
-        HomeBtn.setBackground(new java.awt.Color(10, 204, 26, 80));
+        HomeBtn.setBackground(new java.awt.Color(85, 242, 240));
         HomeBtn.setToolTipText("");
+        HomeBtn.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                HomeBtnMouseMoved(evt);
+            }
+        });
         HomeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 HomeBtnMouseClicked(evt);
@@ -113,52 +119,48 @@ public void scaleImg(){
             .addComponent(Home_lable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        GuideBtn1.setBackground(new java.awt.Color(10, 204, 26, 80));
-        GuideBtn1.setToolTipText("");
-        GuideBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
+        GuideBtn.setBackground(new java.awt.Color(85, 242, 240));
+        GuideBtn.setToolTipText("");
+        GuideBtn.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                GuideBtnMouseMoved(evt);
+            }
+        });
+        GuideBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                GuideBtn1MouseClicked(evt);
+                GuideBtnMouseClicked(evt);
             }
         });
 
-        Guide_icon1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Guide_icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/users-alt.png"))); // NOI18N
+        Guide_icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Guide_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/users-alt.png"))); // NOI18N
 
-        Guide_lable1.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-        Guide_lable1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Guide_lable1.setText("      GUIDE");
+        Guide_lable.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        Guide_lable.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Guide_lable.setText("      GUIDE");
 
-        javax.swing.GroupLayout GuideBtn1Layout = new javax.swing.GroupLayout(GuideBtn1);
-        GuideBtn1.setLayout(GuideBtn1Layout);
-        GuideBtn1Layout.setHorizontalGroup(
-            GuideBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(GuideBtn1Layout.createSequentialGroup()
-                .addComponent(Guide_icon1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout GuideBtnLayout = new javax.swing.GroupLayout(GuideBtn);
+        GuideBtn.setLayout(GuideBtnLayout);
+        GuideBtnLayout.setHorizontalGroup(
+            GuideBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GuideBtnLayout.createSequentialGroup()
+                .addComponent(Guide_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Guide_lable1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(Guide_lable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        GuideBtn1Layout.setVerticalGroup(
-            GuideBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Guide_icon1, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-            .addComponent(Guide_lable1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/200×150 .png"))); // NOI18N
-
-        javax.swing.GroupLayout AppLogoLayout = new javax.swing.GroupLayout(AppLogo);
-        AppLogo.setLayout(AppLogoLayout);
-        AppLogoLayout.setHorizontalGroup(
-            AppLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        AppLogoLayout.setVerticalGroup(
-            AppLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        GuideBtnLayout.setVerticalGroup(
+            GuideBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Guide_icon, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+            .addComponent(Guide_lable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        FeedbackBtn.setBackground(new java.awt.Color(10, 204, 26, 80));
+        FeedbackBtn.setBackground(new java.awt.Color(85, 242, 240));
         FeedbackBtn.setToolTipText("");
+        FeedbackBtn.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                FeedbackBtnMouseMoved(evt);
+            }
+        });
         FeedbackBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FeedbackBtnMouseClicked(evt);
@@ -170,7 +172,7 @@ public void scaleImg(){
 
         Feedback_lable.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         Feedback_lable.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Feedback_lable.setText("      GUIDE");
+        Feedback_lable.setText("      FEEDBACK");
 
         javax.swing.GroupLayout FeedbackBtnLayout = new javax.swing.GroupLayout(FeedbackBtn);
         FeedbackBtn.setLayout(FeedbackBtnLayout);
@@ -187,12 +189,26 @@ public void scaleImg(){
             .addComponent(Feedback_lable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/200×150 .png"))); // NOI18N
+
+        javax.swing.GroupLayout AppLogoLayout = new javax.swing.GroupLayout(AppLogo);
+        AppLogo.setLayout(AppLogoLayout);
+        AppLogoLayout.setHorizontalGroup(
+            AppLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        AppLogoLayout.setVerticalGroup(
+            AppLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout SidePanelLayout = new javax.swing.GroupLayout(SidePanel);
         SidePanel.setLayout(SidePanelLayout);
         SidePanelLayout.setHorizontalGroup(
             SidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(HomeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(GuideBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(GuideBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SidePanelLayout.createSequentialGroup()
                 .addGap(0, 14, Short.MAX_VALUE)
                 .addGroup(SidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,7 +232,7 @@ public void scaleImg(){
                 .addGap(52, 52, 52)
                 .addComponent(HomeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
-                .addComponent(GuideBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(GuideBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
                 .addComponent(FeedbackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(275, Short.MAX_VALUE))
@@ -299,10 +315,10 @@ public void scaleImg(){
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void GuideBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuideBtn1MouseClicked
+    private void GuideBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuideBtnMouseClicked
         // TODO add your handling code here:
         TabbedPane.setSelectedIndex(1);
-    }//GEN-LAST:event_GuideBtn1MouseClicked
+    }//GEN-LAST:event_GuideBtnMouseClicked
 
     private void HomeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeBtnMouseClicked
         // TODO add your handling code here:
@@ -323,7 +339,29 @@ public void scaleImg(){
 
     private void FeedbackBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FeedbackBtnMouseClicked
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_FeedbackBtnMouseClicked
+
+    private void HomeBtnMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeBtnMouseMoved
+        // TODO add your handling code here:
+        setcolor(HomeBtn);
+        resetcolor(GuideBtn);
+        resetcolor(FeedbackBtn);
+    }//GEN-LAST:event_HomeBtnMouseMoved
+
+    private void GuideBtnMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuideBtnMouseMoved
+        // TODO add your handling code here:
+        setcolor(GuideBtn);
+        resetcolor(HomeBtn);
+        resetcolor(FeedbackBtn);
+    }//GEN-LAST:event_GuideBtnMouseMoved
+
+    private void FeedbackBtnMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FeedbackBtnMouseMoved
+        // TODO add your handling code here:
+        setcolor(FeedbackBtn);
+        resetcolor(HomeBtn);
+        resetcolor(GuideBtn);
+    }//GEN-LAST:event_FeedbackBtnMouseMoved
 
     /**
      * @param args the command line arguments
@@ -365,9 +403,9 @@ public void scaleImg(){
     private javax.swing.JPanel FeedbackBtn;
     private javax.swing.JLabel Feedback_icon;
     private javax.swing.JLabel Feedback_lable;
-    private javax.swing.JPanel GuideBtn1;
-    private javax.swing.JLabel Guide_icon1;
-    private javax.swing.JLabel Guide_lable1;
+    private javax.swing.JPanel GuideBtn;
+    private javax.swing.JLabel Guide_icon;
+    private javax.swing.JLabel Guide_lable;
     private javax.swing.JPanel Home;
     private javax.swing.JPanel HomeBtn;
     private javax.swing.JLabel HomeImg;

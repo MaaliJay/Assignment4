@@ -50,6 +50,11 @@ public void scaleImg(){
         GuideBtn1 = new javax.swing.JPanel();
         Guide_icon1 = new javax.swing.JLabel();
         Guide_lable1 = new javax.swing.JLabel();
+        AppLogo = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        FeedbackBtn = new javax.swing.JPanel();
+        Feedback_icon = new javax.swing.JLabel();
+        Feedback_lable = new javax.swing.JLabel();
         TabbedPane = new javax.swing.JTabbedPane();
         Home = new javax.swing.JPanel();
         HomeImg = new javax.swing.JLabel();
@@ -62,7 +67,13 @@ public void scaleImg(){
 
         MainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        SidePanel.setBackground(new java.awt.Color(149, 235, 38, 80));
+        SidePanel.setBackground(new java.awt.Color(24, 24, 24, 80));
+
+        txt_searchBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_searchBoxActionPerformed(evt);
+            }
+        });
 
         btn_search.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/search.png"))); // NOI18N
@@ -94,7 +105,7 @@ public void scaleImg(){
             .addGroup(HomeBtnLayout.createSequentialGroup()
                 .addComponent(Home_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Home_lable, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Home_lable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         HomeBtnLayout.setVerticalGroup(
             HomeBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,13 +135,56 @@ public void scaleImg(){
             .addGroup(GuideBtn1Layout.createSequentialGroup()
                 .addComponent(Guide_icon1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Guide_lable1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(Guide_lable1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         GuideBtn1Layout.setVerticalGroup(
             GuideBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Guide_icon1, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
             .addComponent(Guide_lable1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/200×150 .png"))); // NOI18N
+
+        javax.swing.GroupLayout AppLogoLayout = new javax.swing.GroupLayout(AppLogo);
+        AppLogo.setLayout(AppLogoLayout);
+        AppLogoLayout.setHorizontalGroup(
+            AppLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        AppLogoLayout.setVerticalGroup(
+            AppLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        FeedbackBtn.setBackground(new java.awt.Color(10, 204, 26, 80));
+        FeedbackBtn.setToolTipText("");
+        FeedbackBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FeedbackBtnMouseClicked(evt);
+            }
+        });
+
+        Feedback_icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Feedback_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/profiles.png"))); // NOI18N
+
+        Feedback_lable.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        Feedback_lable.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Feedback_lable.setText("      GUIDE");
+
+        javax.swing.GroupLayout FeedbackBtnLayout = new javax.swing.GroupLayout(FeedbackBtn);
+        FeedbackBtn.setLayout(FeedbackBtnLayout);
+        FeedbackBtnLayout.setHorizontalGroup(
+            FeedbackBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FeedbackBtnLayout.createSequentialGroup()
+                .addComponent(Feedback_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Feedback_lable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        FeedbackBtnLayout.setVerticalGroup(
+            FeedbackBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Feedback_icon, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+            .addComponent(Feedback_lable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout SidePanelLayout = new javax.swing.GroupLayout(SidePanel);
@@ -139,12 +193,16 @@ public void scaleImg(){
             SidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(HomeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(GuideBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(SidePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txt_searchBox, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SidePanelLayout.createSequentialGroup()
+                .addGap(0, 14, Short.MAX_VALUE)
+                .addGroup(SidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AppLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(SidePanelLayout.createSequentialGroup()
+                        .addComponent(txt_searchBox, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12))
+            .addComponent(FeedbackBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         SidePanelLayout.setVerticalGroup(
             SidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,11 +211,15 @@ public void scaleImg(){
                 .addGroup(SidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txt_searchBox, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                     .addComponent(btn_search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(89, 89, 89)
+                .addGap(27, 27, 27)
+                .addComponent(AppLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
                 .addComponent(HomeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addGap(57, 57, 57)
                 .addComponent(GuideBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(427, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addComponent(FeedbackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(275, Short.MAX_VALUE))
         );
 
         MainPanel.add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -255,6 +317,14 @@ public void scaleImg(){
         }
     }//GEN-LAST:event_btn_searchMouseClicked
 
+    private void txt_searchBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_searchBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_searchBoxActionPerformed
+
+    private void FeedbackBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FeedbackBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FeedbackBtnMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -291,6 +361,10 @@ public void scaleImg(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel AppLogo;
+    private javax.swing.JPanel FeedbackBtn;
+    private javax.swing.JLabel Feedback_icon;
+    private javax.swing.JLabel Feedback_lable;
     private javax.swing.JPanel GuideBtn1;
     private javax.swing.JLabel Guide_icon1;
     private javax.swing.JLabel Guide_lable1;
@@ -303,6 +377,7 @@ public void scaleImg(){
     private javax.swing.JPanel SidePanel;
     private javax.swing.JTabbedPane TabbedPane;
     private javax.swing.JLabel btn_search;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

@@ -168,7 +168,7 @@ public class Payment extends javax.swing.JFrame {
         jTextField32.setForeground(new java.awt.Color(153, 153, 153));
         jTextField32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField32ActionPerformed(evt);
+                jTextField32ActionPerformed(evt); 
             }
         });
 

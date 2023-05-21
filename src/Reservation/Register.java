@@ -425,7 +425,7 @@ public class Register extends javax.swing.JFrame {
                            pst.execute();
                            DialogBox1 db1 = new DialogBox1();
                            db1.setVisible(true);
-                           //JOptionPane.showMessageDialog(null, "Registration Complete..!");
+                           
                            txt_fname.setText("");
                            txt_lname.setText("");
                            txt_email.setText("");
@@ -435,6 +435,9 @@ public class Register extends javax.swing.JFrame {
                            txt_username.setText("");
                            txt_password.setText("");
                            txt_rpassword.setText("");
+                           
+                           this.dispose();
+                           
                         }
                         else{
                             JOptionPane.showMessageDialog(null, "Please accept user agreements & Conditions...!");

@@ -20,7 +20,7 @@ public class LoadingWindow extends javax.swing.JFrame implements Runnable{
      */
     public LoadingWindow() {
         initComponents();
-        LoadingBar.setForeground(new Color(56, 206, 232));
+        LoadingBar.setForeground(new Color(51, 255, 51));
         LoadingBar.setBackground(new Color(132, 135, 135));
         Thread th = new Thread(this);
         th.start();
@@ -37,6 +37,7 @@ public class LoadingWindow extends javax.swing.JFrame implements Runnable{
             LoadingPercent.setText(i+"%");
             LoadingBar.setValue(i);
         }
+            
             Dashboard db = new Dashboard();
             db.setVisible(true);
             dispose();

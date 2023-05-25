@@ -45,8 +45,9 @@ public class Feedbaack extends javax.swing.JFrame {
 
         jScrollPane1.setBackground(new java.awt.Color(153, 255, 255));
 
-        Table.setBackground(new java.awt.Color(153, 204, 255));
+        Table.setBackground(new java.awt.Color(24, 24, 24));
         Table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Table.setForeground(new java.awt.Color(255, 255, 255));
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -154,6 +155,7 @@ public class Feedbaack extends javax.swing.JFrame {
                 "Name", "Feedback"
             }
         ));
+        Table.setToolTipText("");
         Table.setRowHeight(30);
         Table.setShowVerticalLines(true);
         jScrollPane1.setViewportView(Table);
@@ -163,8 +165,9 @@ public class Feedbaack extends javax.swing.JFrame {
             Table.getColumnModel().getColumn(0).setMaxWidth(150);
         }
 
-        btn_show.setBackground(new java.awt.Color(51, 255, 51));
+        btn_show.setBackground(new java.awt.Color(85, 242, 240));
         btn_show.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btn_show.setForeground(new java.awt.Color(73, 89, 235));
         btn_show.setText("SHOW");
         btn_show.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_show.addActionListener(new java.awt.event.ActionListener() {
@@ -173,8 +176,9 @@ public class Feedbaack extends javax.swing.JFrame {
             }
         });
 
-        btn_back.setBackground(new java.awt.Color(51, 255, 51));
+        btn_back.setBackground(new java.awt.Color(85, 242, 240));
         btn_back.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btn_back.setForeground(new java.awt.Color(73, 89, 235));
         btn_back.setText("BACK");
         btn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_back.addActionListener(new java.awt.event.ActionListener() {
@@ -188,25 +192,25 @@ public class Feedbaack extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 724, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_back)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_show)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(btn_back)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_show)
+                .addGap(52, 52, 52))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 813, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_show, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(btn_back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_show, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         setSize(new java.awt.Dimension(825, 516));

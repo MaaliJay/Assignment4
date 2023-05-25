@@ -80,6 +80,7 @@ public class Login extends javax.swing.JFrame {
         btn_login.setBackground(new java.awt.Color(51, 255, 51));
         btn_login.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btn_login.setText("Login");
+        btn_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_loginActionPerformed(evt);
@@ -94,6 +95,7 @@ public class Login extends javax.swing.JFrame {
         btn_register.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btn_register.setForeground(new java.awt.Color(255, 255, 255));
         btn_register.setText("Click Here");
+        btn_register.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_registerActionPerformed(evt);
@@ -166,7 +168,7 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 0, 50, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reservation/Sigiriya.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Sigiriya.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 620));
 
         setSize(new java.awt.Dimension(1001, 621));

@@ -22,6 +22,7 @@ public class LoadingWindow extends javax.swing.JFrame implements Runnable{
         initComponents();
         LoadingBar.setForeground(new Color(51, 255, 51));
         LoadingBar.setBackground(new Color(132, 135, 135));
+        
         Thread th = new Thread(this);
         th.start();
     }

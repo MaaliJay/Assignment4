@@ -243,6 +243,7 @@ public class Register extends javax.swing.JFrame {
 
         btn_check.setBackground(new java.awt.Color(0, 0, 204, 80));
         btn_check.setText("Check");
+        btn_check.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_checkActionPerformed(evt);
@@ -370,7 +371,7 @@ public class Register extends javax.swing.JFrame {
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 360, 60));
 
         BackImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BackImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\jayaw\\Desktop\\Computer Science\\Level II\\Semester I\\Object oriented programming\\Project\\Assignment4\\src\\Reservation\\undo2.png")); // NOI18N
+        BackImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/undo2.png"))); // NOI18N
         BackImage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackImageMouseClicked(evt);

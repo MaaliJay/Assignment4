@@ -66,7 +66,7 @@ public class LoadingWindow extends javax.swing.JFrame implements Runnable{
         jPanel1.setBackground(new java.awt.Color(24, 24, 24));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/685×431.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Icon.png"))); // NOI18N
 
         LoadingBar.setForeground(new java.awt.Color(51, 255, 51));
 

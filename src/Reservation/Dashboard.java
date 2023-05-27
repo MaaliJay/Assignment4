@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.Timer;
 
 /**
  *
@@ -27,6 +28,8 @@ public class Dashboard extends javax.swing.JFrame {
     public Dashboard() {
         initComponents();
     }
+    
+    Payment py = new Payment();
 
     public void setcolor(JPanel panel){
         panel.setBackground(new Color(73, 89, 235));
@@ -63,7 +66,6 @@ public class Dashboard extends javax.swing.JFrame {
         Logout_lable = new javax.swing.JLabel();
         AppLogo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
         TabbedPane = new javax.swing.JTabbedPane();
         Home = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -77,25 +79,25 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        reserve1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        jButton3 = new javax.swing.JButton();
+        reserve2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
-        jButton5 = new javax.swing.JButton();
+        reserve3 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
-        jButton7 = new javax.swing.JButton();
+        reserve4 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         Feedback = new javax.swing.JPanel();
         Title = new javax.swing.JLabel();
@@ -301,19 +303,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         SidePanel.add(AppLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 74, -1, -1));
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 810, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
-        );
-
-        SidePanel.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 480));
-
         MainPanel.add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 560));
 
         Description.setBackground(new java.awt.Color(0, 0, 0, 80));
@@ -370,9 +359,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addComponent(Home_title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(HomeLayout.createSequentialGroup()
-                .addComponent(HomeImg, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(HomeImg, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
         TabbedPane.addTab("tab1", Home);
@@ -395,10 +382,15 @@ public class Dashboard extends javax.swing.JFrame {
         jTextArea1.setText("Name       : S.M Jayawardhane\nEmp No   : G01\nAge          : 35\nPlaces      : Ella, Idalgashinna, \n                 Kandy etc. ");
         jScrollPane2.setViewportView(jTextArea1);
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 255));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Reserve");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        reserve1.setBackground(new java.awt.Color(51, 51, 255));
+        reserve1.setForeground(new java.awt.Color(255, 255, 255));
+        reserve1.setText("Reserve");
+        reserve1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        reserve1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reserve1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(51, 51, 255));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -423,7 +415,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(reserve1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -437,7 +429,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(reserve1)
                 .addContainerGap())
         );
 
@@ -457,13 +449,13 @@ public class Dashboard extends javax.swing.JFrame {
         jTextArea2.setText("Name      : S.N Amarasinghe\nEmp No  : G02\nAge         : 30       \nPlaces     : Unawatuna, Mirissa, \n                 Pothuvil etc.");
         jScrollPane4.setViewportView(jTextArea2);
 
-        jButton3.setBackground(new java.awt.Color(51, 51, 255));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Reserve");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        reserve2.setBackground(new java.awt.Color(51, 51, 255));
+        reserve2.setForeground(new java.awt.Color(255, 255, 255));
+        reserve2.setText("Reserve");
+        reserve2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        reserve2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                reserve2ActionPerformed(evt);
             }
         });
 
@@ -487,7 +479,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(reserve2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(97, 97, 97)
@@ -505,7 +497,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(reserve2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -525,10 +517,15 @@ public class Dashboard extends javax.swing.JFrame {
         jTextArea3.setText("Name       : D. Maduranga\nEmp No   : G03\nAge          : 33\nPlaces      : All ancient places\n                 in Sri Lanka");
         jScrollPane5.setViewportView(jTextArea3);
 
-        jButton5.setBackground(new java.awt.Color(51, 51, 255));
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Reserve");
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        reserve3.setBackground(new java.awt.Color(51, 51, 255));
+        reserve3.setForeground(new java.awt.Color(255, 255, 255));
+        reserve3.setText("Reserve");
+        reserve3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        reserve3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reserve3ActionPerformed(evt);
+            }
+        });
 
         jButton6.setBackground(new java.awt.Color(51, 51, 255));
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
@@ -552,7 +549,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(reserve3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 16, Short.MAX_VALUE))
         );
@@ -567,7 +564,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton6)
                 .addGap(18, 18, 18)
-                .addComponent(jButton5)
+                .addComponent(reserve3)
                 .addContainerGap())
         );
 
@@ -586,10 +583,15 @@ public class Dashboard extends javax.swing.JFrame {
         jTextArea4.setText("Name       : C.D Samaraweera\nEmp No   : G04\nAge          : 28\nPlaces     : Yala, Udawalawa, \n                 Wilpaththu etc.");
         jScrollPane6.setViewportView(jTextArea4);
 
-        jButton7.setBackground(new java.awt.Color(51, 51, 255));
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Reserve");
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        reserve4.setBackground(new java.awt.Color(51, 51, 255));
+        reserve4.setForeground(new java.awt.Color(255, 255, 255));
+        reserve4.setText("Reserve");
+        reserve4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        reserve4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reserve4ActionPerformed(evt);
+            }
+        });
 
         jButton8.setBackground(new java.awt.Color(51, 51, 255));
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
@@ -613,7 +615,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(reserve4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 16, Short.MAX_VALUE))
         );
@@ -628,7 +630,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton8)
                 .addGap(18, 18, 18)
-                .addComponent(jButton7)
+                .addComponent(reserve4)
                 .addContainerGap())
         );
 
@@ -886,9 +888,24 @@ public class Dashboard extends javax.swing.JFrame {
             PreparedStatement pst = conn.prepareStatement(sqlquery);
             pst.execute();
             
-            JOptionPane.showMessageDialog(null, "Thank you for your feedback...!");
-            txt_feedback.setText("");
-            txt_feedname.setText("");
+            if(feedback.equalsIgnoreCase("")){
+                JOptionPane.showMessageDialog(null, "Please enter something..");
+            }
+            
+            else{
+                txt_feedback.setText("");
+                txt_feedname.setText("");
+            
+            
+                FeedbackSuccessDialogBox1 fDialog = new FeedbackSuccessDialogBox1();
+                fDialog.setVisible(true);
+            
+                int duration = 5000; // 5 seconds
+                Timer timer = new Timer(duration, (e) -> {
+                // Close the dialog box
+                fDialog.dispose();
+                });                
+            }
             
         }catch(Exception e){
             e.printStackTrace();
@@ -901,7 +918,7 @@ public class Dashboard extends javax.swing.JFrame {
         fb.setVisible(true);
     }
     
-        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
        Payment pay = new  Payment();
         pay.show();
     }//GEN-LAST:event_btn_showActionPerformed
@@ -913,10 +930,11 @@ public class Dashboard extends javax.swing.JFrame {
         jf2.show();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       Payment pay = new  Payment();
-        pay.show();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void reserve2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserve2ActionPerformed
+        py.setVisible(true);
+        py.txt_gid.setText("G02");
+        py.txt_gname.setText("S.N.Amarasinghe");
+    }//GEN-LAST:event_reserve2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -940,6 +958,28 @@ public class Dashboard extends javax.swing.JFrame {
         MoreInfo4 jf5 = new MoreInfo4();
         jf5.show();
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void reserve1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserve1ActionPerformed
+        // TODO add your handling code here:
+        
+        py.setVisible(true);
+        py.txt_gid.setText("G01");
+        py.txt_gname.setText("S.M.Jayawardhana");
+    }//GEN-LAST:event_reserve1ActionPerformed
+
+    private void reserve3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserve3ActionPerformed
+        // TODO add your handling code here:
+        py.setVisible(true);
+        py.txt_gid.setText("G03");
+        py.txt_gname.setText("D.Maduranga");
+    }//GEN-LAST:event_reserve3ActionPerformed
+
+    private void reserve4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserve4ActionPerformed
+        // TODO add your handling code here:
+        py.setVisible(true);
+        py.txt_gid.setText("G04");
+        py.txt_gname.setText("C.D.Samaraweera");
+    }//GEN-LAST:event_reserve4ActionPerformed
 
          
     /**
@@ -1005,13 +1045,9 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel btn_search;
     private javax.swing.JButton btn_show;
     private javax.swing.JButton btn_submit;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -1024,7 +1060,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1036,6 +1071,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JLabel lableFeed;
+    private javax.swing.JButton reserve1;
+    private javax.swing.JButton reserve2;
+    private javax.swing.JButton reserve3;
+    private javax.swing.JButton reserve4;
     private javax.swing.JTextArea txt_feedback;
     private javax.swing.JTextField txt_feedname;
     private javax.swing.JTextField txt_searchBox;
